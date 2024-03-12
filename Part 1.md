@@ -1,5 +1,5 @@
 # DL Workshop 1
--------------------------------
+
 ### 什么是[深度学习](https://easyai.tech/ai-definition/deep-learning/)
 >深度学习是机器学习的一个分支，它模仿了人脑的**神经网络**结构，通过多层非线性变换，学习输入数据的特征表示，并最终在输出层进行预测。简单来说，深度学习，或者叫做神经网络，就是一个通过已知的输入和输出不断**调整参数**的机器学习模型。具体是怎样调整参数的呢，我们后面会讲到。
 
@@ -11,10 +11,10 @@
 
 
 #### 深度学习的基本单元——perceptron(感知器)
-![感知器](img\perceptron.png)
-![activation_function1](img\1.png)
-![activation_function2](img\2.png)
-![activation_function2](img\3.png)
+![感知器](img/perceptron.png)
+![activation_function1](img/1.png)
+![activation_function2](img/2.png)
+![activation_function2](img/3.png)
 #### 简单理解深度学习
 ![pic1](https://easyai.tech/wp-content/uploads/2022/08/98353-2019-06-03-dl-flow.png.webp)
 ![pic2](https://easyai.tech/wp-content/uploads/2022/08/30c2a-2019-06-03-dl-shuzihua.png.webp)
