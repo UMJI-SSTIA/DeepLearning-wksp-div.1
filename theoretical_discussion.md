@@ -30,4 +30,6 @@
 
 - [Deep Learning by Ian Goodfellow, Yoshua Bengio, and Aaron Courville](http://www.deeplearningbook.org/)
 - [Deep Learning Specialization by Andrew Ng on Coursera](https://www.coursera.org/specializations/deep-learning)
+- [MIT Intro to Deep Learning](http://introtodeeplearning.com/)
+- [交大密院Deep Learning学习手册](https://github.com/Banyutong/deep_learning_hands_on)
 - GPT 4.0 (不觉得用AI去写AI的资料很有趣吗，很符合我对AI的想像)
