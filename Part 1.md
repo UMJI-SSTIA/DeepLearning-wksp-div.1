@@ -139,8 +139,16 @@
 
 > LR是什么呢？我们继续说得简单一些。这是一个通过奖惩机制来纠正AI行为或者说是调整模型参数，来达到我们训练目的的一种方法。
 
-<iframe height=498 width=850 src="https://www.bilibili.com/video/BV1QY411k7oW?t=4.1">
+<iframe 
+height="500"
+width="100%"
+src="//player.bilibili.com/player.html?bvid=BV1QY411k7oW&autoplay=False"
+allowfullscreen="allowfullscreen" 
+scrolling="no" 
+frameborder="0" 
+sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts">
 </iframe>
+
 
 强化学习算法的思路非常简单，以游戏为例，如果在游戏中采取某种策略可以取得较高的得分，那么就进一步「强化」这种策略，以期继续取得较好的结果。这种策略与日常生活中的各种「绩效奖励」非常类似。我们平时也常常用这样的策略来提高自己的游戏水平。
 
