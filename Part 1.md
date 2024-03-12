@@ -142,10 +142,6 @@
 <iframe height=498 width=850 src="https://www.bilibili.com/video/BV1QY411k7oW?t=4.1">
 </iframe>
 
-<video id="video" controls="" preload="none" >
-      <source id="mp4" src="1.mp4" type="video/mp4">
-</video>
-
 强化学习算法的思路非常简单，以游戏为例，如果在游戏中采取某种策略可以取得较高的得分，那么就进一步「强化」这种策略，以期继续取得较好的结果。这种策略与日常生活中的各种「绩效奖励」非常类似。我们平时也常常用这样的策略来提高自己的游戏水平。
 
 在 Flappy bird 这个游戏中，我们需要简单的点击操作来控制小鸟，躲过各种水管，飞的越远越好，因为飞的越远就能获得更高的积分奖励。
