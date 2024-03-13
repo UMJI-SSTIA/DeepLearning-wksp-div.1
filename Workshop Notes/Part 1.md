@@ -210,7 +210,7 @@ sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts">
 
 - ##### [Gymnasium](https://github.com/Farama-Foundation/Gymnasium?tab=readme-ov-file)（强化学习）
 
-  ![Gymnasium](D:\Repositories\DeepLearning-wksp-div.1\img\PixPin_2024-03-13_11-04-03.gif)
+  ![Gymnasium](img\PixPin_2024-03-13_11-04-03.gif)
 
 ### 小试牛刀
 
