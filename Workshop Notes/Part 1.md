@@ -114,11 +114,17 @@
 > RNN又是干什么的呢？对于之前的神经网络来说，本次的输出只与本次的输入有关，而RNN呢，则可以说是具有**记忆**的神经网络，之前的输入也会对本次的输出造成影响，就像GPT一样，不过GPT采用的架构并不是RNN，而是Transformer，这个我们后面再说。
 
 ![典型深度学习](https://easyai.tech/wp-content/uploads/2022/08/6015f-2019-07-02-chuantong.png.webp)
+
 ![RNN](https://easyai.tech/wp-content/uploads/2022/08/f0116-2019-07-02-rnn-1.gif)
+
 ![fig1](https://easyai.tech/wp-content/uploads/2022/08/bf30b-2019-07-02-fenci.gif)
+
 ![fig2](https://easyai.tech/wp-content/uploads/2022/08/eb691-2019-07-02-input-what.gif)
+
 ![fig3](https://easyai.tech/wp-content/uploads/2022/08/4d052-2019-07-02-input-time.gif)
+
 ![fig4](https://easyai.tech/wp-content/uploads/2022/08/575e2-2019-07-02-input-5.gif)
+
 ![fig5](https://easyai.tech/wp-content/uploads/2022/08/3877f-2019-07-02-output.gif)
 
 可以看到，RNN的输入和输出之间是存在关联的，也就是说，RNN的输出是依赖于之前的输入的。
@@ -139,9 +145,15 @@
 
 > LR是什么呢？我们继续说得简单一些。这是一个通过奖惩机制来纠正AI行为或者说是调整模型参数，来达到我们训练目的的一种方法。
 
-<iframe height=498 width=850 src="https://www.bilibili.com/video/BV1QY411k7oW?t=4.1">
+<iframe 
+height="500"
+width="100%"
+src="https://player.bilibili.com/player.html?bvid=BV1QY411k7oW&autoplay=False"
+allowfullscreen="allowfullscreen" 
+scrolling="no" 
+frameborder="0" 
+sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts">
 </iframe>
-
 强化学习算法的思路非常简单，以游戏为例，如果在游戏中采取某种策略可以取得较高的得分，那么就进一步「强化」这种策略，以期继续取得较好的结果。这种策略与日常生活中的各种「绩效奖励」非常类似。我们平时也常常用这样的策略来提高自己的游戏水平。
 
 在 Flappy bird 这个游戏中，我们需要简单的点击操作来控制小鸟，躲过各种水管，飞的越远越好，因为飞的越远就能获得更高的积分奖励。
@@ -158,14 +170,197 @@
 
 你会发现，强化学习和监督学习、无监督学习 最大的不同就是不需要大量的“数据喂养”。而是通过自己不停的尝试来学会某些技能。
 
-### 深度学习的应用
-##### 1. 计算机视觉
+### 一些库
 
-> 计算机视觉（Computer Vision，CV）是人工智能领域的重要方向之一。计算机视觉技术能够将图像和视频转化为有用的信息，并对其进行处理、分析和理解。
+- ##### [YOLO](https://github.com/ultralytics/ultralytics?tab=readme-ov-file)（计算机视觉）
+
+<iframe 
+height="400"
+width="100%"
+src="https://github.com/ultralytics/ultralytics"
+allowfullscreen="allowfullscreen"  
+frameborder="0" 
+sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts">
+</iframe>
 
 
+- ##### [CVZone](https://github.com/cvzone/cvzone)（计算机视觉）
+
+<iframe 
+height="400"
+width="100%"
+src="https://github.com/cvzone/cvzone"
+allowfullscreen="allowfullscreen" 
+frameborder="0" 
+sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts">
+</iframe>
+
+
+- ##### [NLTK](https://www.nltk.org/)（自然语言处理）
+
+<iframe 
+height="400"
+width="100%"
+src="https://www.nltk.org/"
+allowfullscreen="allowfullscreen" 
+frameborder="0" 
+sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts">
+</iframe>
+
+
+- ##### [Gymnasium](https://github.com/Farama-Foundation/Gymnasium?tab=readme-ov-file)（强化学习）
+
+  ![Gymnasium](D:\Repositories\DeepLearning-wksp-div.1\img\PixPin_2024-03-13_11-04-03.gif)
+
+### 小试牛刀
+
+```python
+# 安装ultralytics库
+pip install ultralytics
+```
+
+##### 1. 图片分类（手写数字分类器）
+
+
+> ######     MNIST介绍
+> - MNIST 包含 60,000 张手写数字训练图像和 10,000 张测试图像。
+> - 数据集由大小为 28x28 像素的灰度图像组成。
+> - 对图像进行归一化处理，使其适合 28x28 像素的边界框，并进行抗锯齿处理，引入灰度级。
+> - MNIST 广泛用于机器学习领域的训练和测试，尤其是图像分类任务。
+
+![MNIST](https://upload.wikimedia.org/wikipedia/commons/2/27/MnistExamples.png)
+
+
+
+###### 训练模型
+
+```python
+from ultralytics import YOLO
+
+# Load a model
+model = YOLO('yolov8n-cls.pt')  # load a pretrained model (recommended for training)
+
+# Train the model
+results = model.train(data='mnist', epochs=10, imgsz=32) # 从云端下载MNIST数据集
+```
+
+```python
+# 如果你想要使用本地的数据集
+from ultralytics import YOLO
+
+# Load a model
+model = YOLO('yolov8n-cls.pt')  # load a pretrained model (recommended for training)
+
+# Train the model
+results = model.train(data='path/to/dataset', epochs=100, imgsz=640)
+```
+
+```
+# 目录结构
+
+dataset/
+|-- train/
+|   |-- class1/
+|		|-- img1.jpg
+|   	|-- img2.jpg
+|   	|-- ...
+|	|-- class2/
+|		|-- img1.jpg
+|   	|-- img2.jpg
+|   	|-- ...
+|	|-- ...
+|
+|-- val/
+|   |-- class1/
+|		|-- img1.jpg
+|   	|-- img2.jpg
+|   	|-- ...
+|	|-- class2/
+|		|-- img1.jpg
+|   	|-- img2.jpg
+|   	|-- ...
+|	|-- ...
+```
+
+###### 验证模型
+
+```python
+from ultralytics import YOLO
+
+# Load a model
+model = YOLO('yolov8n-cls.pt')  # load an official model
+model = YOLO('path/to/best.pt')  # load a custom model
+
+# Validate the model
+metrics = model.val()  # no arguments needed, dataset and settings remembered
+metrics.top1   # top1 accuracy
+metrics.top5   # top5 accuracy
+```
+
+###### 进行预测
+
+```python
+from ultralytics import YOLO
+
+# Load a model
+model = YOLO('yolov8n-cls.pt')  # load an official model
+model = YOLO('path/to/best.pt')  # load a custom model
+
+# Predict with the model
+results = model('https://ultralytics.com/images/bus.jpg')  # predict on an image
+```
+
+##### 2. 目标检测
+
+![目标检测](https://user-images.githubusercontent.com/26833433/243418624-5785cb93-74c9-4541-9179-d5c6782d491a.png)
+
+###### 教程
+
+[IMAGE CLASSIFICATION with Yolov8 custom dataset | Computer vision tutorial (youtube.com)](https://www.youtube.com/watch?v=ZeLg5rxLGLg)
+
+###### 演示
+
+```python
+# 安装PIL库（进行图像处理的）
+pip install Pillow
+```
+
+```python
+from PIL import Image
+from ultralytics import YOLO
+
+# Load a pretrained YOLOv8n model
+model = YOLO('yolov8n.pt')
+
+# Define remote image or video URL
+source = 'https://ultralytics.com/images/bus.jpg'
+
+# Run inference on the source
+results = model(source)  # list of Results objects
+
+# Visualize the results
+for i, r in enumerate(results):
+    # Plot results image
+    im_bgr = r.plot()  # BGR-order numpy array
+    im_rgb = Image.fromarray(im_bgr[..., ::-1])  # RGB-order PIL image
+
+    # Show results to screen (in supported environments)
+    r.show()
+
+    # Save results to disk
+    r.save(filename=f'results{i}.jpg')
+```
+
+##### 相关资料
+
+[Deep Learning](https://github.com/exacity/deeplearningbook-chinese?tab=readme-ov-file)
+
+[DIVE INTO DEEP LEARNING](https://zh.d2l.ai/chapter_preface/index.html)
+
+[Banyutong/deep_learning_hands_on (github.com)](https://github.com/Banyutong/deep_learning_hands_on)
 
 ##### 参考资料
+
 [深度学习 – Deep learning | DL](https://easyai.tech/ai-definition/deep-learning/)
 
 [《人工智能》](人工智能.pdf)
@@ -184,3 +379,6 @@
 
 [强化学习-Reinforcement learning | RL](https://easyai.tech/ai-definition/reinforcement-learning/)
 
+[Deep Reinforcement Learning with OpenAI Gym in Python](https://www.youtube.com/watch?v=YLa_KkehvGw)
+
+[MNIST](http://yann.lecun.com/exdb/mnist/)
