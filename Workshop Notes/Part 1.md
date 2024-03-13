@@ -214,6 +214,8 @@ sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts">
 
 ### 小试牛刀
 
+[代码下载](https://jbox.sjtu.edu.cn/l/z16NtG )（和下面不同哦）
+
 ```python
 # 安装ultralytics库
 pip install ultralytics
@@ -282,7 +284,7 @@ dataset/
 |	|-- ...
 ```
 
-###### 验证模型
+###### 验证模型（MNIST没有验证集）
 
 ```python
 from ultralytics import YOLO
