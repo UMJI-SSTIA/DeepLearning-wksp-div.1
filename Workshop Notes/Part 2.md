@@ -1,0 +1,47 @@
+# DL workshop 1 - 2nd part
+
+接下来我们具体介绍神经网络最基本的理论知识。
+
+![感知器](img/perceptron.png)
+
+### 1 Perceptron
+
+神经网络由多个层组成，每个层都由许多神经元组成。每个神经元接收输入，对其进行处理，然后将输出传递给下一层。
+
+神经元是神经网络的基本单元。每个神经元接收一些输入，将这些输入与其权重相乘，然后应用一个激活函数，如ReLU或sigmoid，输出然后传递到下一层。
+
+#### 1.1 线性变换
+
+在这个步骤中，神经元接收一些输入$x_1, x_2, ..., x_n$，每个输入都有一个相应的权重$w_1, w_2, ..., w_n$。神经元将每个输入与其相应的权重相乘，然后将所有的结果加起来，得到一个总和。这个过程可以用下面的公式表示：
+
+$$
+y = \sum_{i=1}^{n} w_i x_i + w_0
+$$
+
+其中$w_0$是偏置项，它是一个常数，可以让神经元更灵活地适应数据。
+
+#### 1.2 非线性变换
+
+在这个步骤中，神经元将线性变换的结果$y$通过一个非线性函数，也称为激活函数。这个函数可以是sigmoid、ReLU（Rectified Linear Unit）、tanh（双曲正切）等。激活函数的选择取决于特定的应用和网络架构。激活函数的目的是引入非线性，使神经网络能够学习并表示更复杂的模式。
+
+Note: 在实践中，ReLU是最常用的激活函数，因为它的计算速度快，且它的导数在大部分区域都是1，有助于避免梯度消失问题。
+
+## 2. 训练神经网络
+
+训练神经网络的目标是找到一组权重和偏置，使得网络的输出尽可能接近训练数据的目标输出，主要以以下两种方法完成：
+
+### 2.1 反向传播
+
+反向传播是一种算法，用于在神经网络中更新权重，以便模型可以学习更好的表示。它首先计算网络输出与目标输出之间的误差，然后计算这个误差相对于每个权重的梯度。这些梯度然后用于更新权重。
+
+### 2.2 梯度下降
+
+梯度下降是一种优化算法，用于找到函数的最小值。在神经网络中，这个函数是损失函数，它衡量了网络输出与目标输出之间的差距。通过反复更新权重以减小梯度，网络最终会收敛到一组能够最小化损失的权重。
+
+## 参考资料
+
+- [Deep Learning by Ian Goodfellow, Yoshua Bengio, and Aaron Courville](http://www.deeplearningbook.org/)
+- [Deep Learning Specialization by Andrew Ng on Coursera](https://www.coursera.org/specializations/deep-learning)
+- [MIT Intro to Deep Learning](http://introtodeeplearning.com/)
+- [交大密院Deep Learning学习手册](https://github.com/Banyutong/deep_learning_hands_on)
+- GPT 4.0 (不觉得很酷吗，很符合我对AI的想像)
