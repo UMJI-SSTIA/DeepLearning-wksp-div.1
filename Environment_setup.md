@@ -68,7 +68,7 @@ https://blog.csdn.net/fan18317517352/article/details/123035625
 
 或者，你也可以通过以下操作添加interpreter：
 
-![img_6.png](img/Envrionment_setup_img/11.png)
+![img_6.png](img/Envrionment_setup_img/15.png)
 
 ## 安装深度学习框架和其他库
 
@@ -88,7 +88,7 @@ conda info -e
 
 如果在你想激活的环境前有一个“*”，说明已经成功切换
 
-![img7.png](C:\Users\86139\SSTIA\DeepLearning-wksp-div.1\img\Envrionment_setup_img\12.png)
+![img7.png](img/Envrionment_setup_img/16.png)
 
 ### 2. 安装依赖项
 
