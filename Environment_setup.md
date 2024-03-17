@@ -1,13 +1,18 @@
 # 环境配置指南
 
+[TOC]
+
+# 前言
+
 此环境配置指南供提供三种配置方式
+
 1. PyCharm+Anaconda+Pytorch（推荐，稍微有点麻烦
 2. Vscode+Anaconda+Pytorch
 3. Google Colab
 
-# 1. PyCharm+Anaconda+Pytorch
+# 1. PyCharm+Anaconda
 
-## 安装 PyCharm
+### 安装 PyCharm
 
 PyCharm 是由 JetBrains 开发的一款强大的 Python IDE。PyCharm 使用其自己的虚拟环境管理器，便于环境管理。
 
@@ -28,24 +33,24 @@ PyCharm 是由 JetBrains 开发的一款强大的 Python IDE。PyCharm 使用其
    ![img_1.png](img/Envrionment_setup_img/img_1.png)
    ![img_2.png](img/Envrionment_setup_img/img_2.png)
 
-
-## 安装 Anaconda
+### 安装 Anaconda <a id="install anaconda"></a>
 
 Anaconda 是一个免费且开源的 Python 和 R 语言的发行版。Anaconda附带了一大批常用的数据科学包，不需要使用pip进行下载；
 自带的conda是包管理器和环境管理器，可以减少未来遇到的各种库和版本的问题。
 
-### 推荐安装教程：
+#### 推荐安装教程：
+
 https://blog.csdn.net/fan18317517352/article/details/123035625  
 **注意**：如果按照上述链接中的指南操作，记得在这下面这两个步骤之间执行exit()命令，退出python环境
 ![img.png](img/Envrionment_setup_img/14.png)
 
-### 创建虚拟环境
+#### 创建虚拟环境
 
-1. #### 打开 Anaconda Prompt:
+1. ##### 打开 Anaconda Prompt:
    
    在开始菜单中找到 Anaconda Prompt 并打开。
 
-2. #### 创建新的虚拟环境:
+2. ##### 创建新的虚拟环境:
    
    使用以下命令创建一个新的虚拟环境，其中 `YourEnvName` 是你为虚拟环境选择的名称，`python=3.9` 指定了 Python 的版本。
    
@@ -54,11 +59,11 @@ https://blog.csdn.net/fan18317517352/article/details/123035625
    ```bash
    conda create -n YourEnvName python=3.9 -y
    
-3. #### 进入新创建的虚拟环境：
+3. ##### 进入新创建的虚拟环境：
    ```bash
    conda activate YourEnvName
    
-4. #### 退出该虚拟环境：
+4. ##### 退出该虚拟环境：
    ```bash
    conda deactivate
 
@@ -76,15 +81,24 @@ https://blog.csdn.net/fan18317517352/article/details/123035625
 4. 选择Conda Environment，点击文件夹图标浏览目录，找到自己Anaconda的安装目录  
     ![img_2.png](img/Envrionment_setup_img/13.png)  
 5. 选择Conda Executable， 点击右边的“Load Environments”
-    ![img_4.png](img/Envrionment_setup_img/9.png)  
+    <img src="img/Envrionment_setup_img/9.png" alt="img_4.png" style="zoom: 67%;" />  
 6. 选择刚刚创建的虚拟环境"deepLearning"  
-![img_5.png](img/Envrionment_setup_img/10.png)  
+<img src="img/Envrionment_setup_img/10.png" alt="img_5.png" style="zoom: 67%;" />  
 
 或者，你也可以通过以下操作添加interpreter：
 
 ![img_6.png](img/Envrionment_setup_img/15.png)
 
-## 安装深度学习框架和其他库
+# 2. Vscode+Anaconda
+
+### 在Vscode中使用Anaconda
+
+1. 根据PyCharm+Anaconda“[安装Anaconda](#install anaconda)”步骤进行操作，配置Anaconda并创建虚拟环境
+2. 在Vscode中打开一个目录，创建test.py文件，点击右下角的“选择解释器”
+   ![img.png](img/Envrionment_setup_img/Vscode.png)  
+     然后选择刚刚创建的conda虚拟环境的名字即可
+
+# 3. 安装深度学习框架和其他库
 
 ### 1. 激活虚拟环境
 
@@ -170,15 +184,68 @@ pip3 install torch torchvision torchaudio --index-url https://download.pytorch.o
 conda install pytorch torchvision torchaudio cpuonly -c pytorch
 ```
 
-# 2. Vscode+Anaconda+Pytorch
-1. 根据PyCharm+Anaconda+Pytorch中的“安装Anaconda”步骤进行操作，配置Anaconda并创建虚拟环境
-2. 在Vscode中打开一个目录，创建test.py文件，点击右下角的“选择解释器”
-![img.png](img/Envrionment_setup_img/Vscode.png)  
-然后选择刚刚创建的conda虚拟环境的名字即可
-2. 根据PyCharm+Anaconda+Pytorch中的“安装深度学习框架和其他库”步骤进行配置
+# 4. Google Colab
 
-   
-## 参考资料
+如果你选择使用Google Colab，你所需要的只是一个Google账号和一个梯子。
+
+### 1. 使用Google Drive
+
+进入[Google Drive](https://drive.google.com)官网，使用你的Google账号登录，你就获得了一个15GB的云空间。
+
+### 2. 关联 Google Drive 和 Google Colab
+
+首先，点击**我的云端硬盘**，右键点击，点击**更多**，点击**关联更多应用**
+
+<img src="img/Envrionment_setup_img/GoogleColab_1.png" alt="GoogleColab_1.png" style="zoom: 50%;" />
+
+
+
+搜索**Google Colaboratory**，点击安装
+
+<img src="img/Envrionment_setup_img/GoogleColab_2.png" alt="GoogleColab_1.png" style="zoom: 50%;" />
+
+最后，右键点击，点击**更多**，点击**Google Colaboratory**，你就创建了一个.ipynb文件并用Colab打开。其功能与Jupyter Notebook类似，不过支持对云端导入Google Drive文件和使用GPU（有限额）。
+
+### 3. 连接GPU
+
+一般情况下，Colab并不主动提供GPU资源。
+
+你可以通过点击左上角**修改**，点击**笔记本设置**，申请使用GPU加速。
+
+<img src="img/Envrionment_setup_img/GoogleColab_3.png" alt="GoogleColab_1.png" style="zoom: 67%;" />
+
+当然，GPU存在使用量上限。因此推荐在没有使用GPU时切换到标准运行时。
+
+你可以通过输入以下命令，了解GPU情况：
+
+``` python
+! /opt/bin/nvidia-smi 
+```
+
+### 4. 导入Google Drive
+
+由于虚拟机分配有时间限制，免费版最长运行12个小时，在终止运行之后，会造成数据的丢失。因此，我们通常会将文件和数据保存在Google Drive中。
+
+而想要导入Google Drive中的文件，只需要执行以下命令
+
+``` python
+from google.colab import drive 
+drive.mount('/content/drive/') 
+```
+
+登录之后就成功导入Google Drive中的文件。
+
+你可以通过左侧边的**文件**选项查找到Google Drive中的文件。
+
+### 5. 运行
+
+直接输入代码并运行即可。
+
+如果你只是想简单尝试一下，你也可以跳过步骤3和4，直接运行代码块。
+
+
+
+# 参考资料
 
 pycharm安装：https://blog.csdn.net/qq_32892383/article/details/116137730  
 
