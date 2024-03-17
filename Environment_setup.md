@@ -1,5 +1,12 @@
 # 环境配置指南
 
+此环境配置指南供提供三种配置方式
+1. PyCharm+Anaconda+Pytorch（推荐，稍微有点麻烦
+2. Vscode+Anaconda+Pytorch
+3. Google Colab
+
+# 1. PyCharm+Anaconda+Pytorch
+
 ## 安装 PyCharm
 
 PyCharm 是由 JetBrains 开发的一款强大的 Python IDE。PyCharm 使用其自己的虚拟环境管理器，便于环境管理。
@@ -22,7 +29,7 @@ PyCharm 是由 JetBrains 开发的一款强大的 Python IDE。PyCharm 使用其
    ![img_2.png](img/Envrionment_setup_img/img_2.png)
 
 
-## 安装 Anaconda（非必须）
+## 安装 Anaconda
 
 Anaconda 是一个免费且开源的 Python 和 R 语言的发行版。Anaconda附带了一大批常用的数据科学包，不需要使用pip进行下载；
 自带的conda是包管理器和环境管理器，可以减少未来遇到的各种库和版本的问题。
@@ -163,8 +170,14 @@ pip3 install torch torchvision torchaudio --index-url https://download.pytorch.o
 conda install pytorch torchvision torchaudio cpuonly -c pytorch
 ```
 
+# 2. Vscode+Anaconda+Pytorch
+1. 根据PyCharm+Anaconda+Pytorch中的“安装Anaconda”步骤进行操作，配置Anaconda并创建虚拟环境
+2. 在Vscode中打开一个目录，创建test.py文件，点击右下角的“选择解释器”
+![img.png](img/Envrionment_setup_img/Vscode.png)  
+然后选择刚刚创建的conda虚拟环境的名字即可
+2. 根据PyCharm+Anaconda+Pytorch中的“安装深度学习框架和其他库”步骤进行配置
 
-
+   
 ## 参考资料
 
 pycharm安装：https://blog.csdn.net/qq_32892383/article/details/116137730  
