@@ -1,5 +1,12 @@
 # 环境配置指南
 
+此环境配置指南供提供三种配置方式
+1. PyCharm+Anaconda+Pytorch（推荐，稍微有点麻烦
+2. Vscode+Anaconda+Pytorch
+3. Google Colab
+
+# 1. PyCharm+Anaconda+Pytorch
+
 ## 安装 PyCharm
 
 PyCharm 是由 JetBrains 开发的一款强大的 Python IDE。PyCharm 使用其自己的虚拟环境管理器，便于环境管理。
@@ -22,13 +29,15 @@ PyCharm 是由 JetBrains 开发的一款强大的 Python IDE。PyCharm 使用其
    ![img_2.png](img/Envrionment_setup_img/img_2.png)
 
 
-## 安装 Anaconda（非必须）
+## 安装 Anaconda
 
 Anaconda 是一个免费且开源的 Python 和 R 语言的发行版。Anaconda附带了一大批常用的数据科学包，不需要使用pip进行下载；
 自带的conda是包管理器和环境管理器，可以减少未来遇到的各种库和版本的问题。
 
 ### 推荐安装教程：
-https://blog.csdn.net/fan18317517352/article/details/123035625
+https://blog.csdn.net/fan18317517352/article/details/123035625  
+**注意**：如果按照上述链接中的指南操作，记得在这下面这两个步骤之间执行exit()命令，退出python环境
+![img.png](img/Envrionment_setup_img/14.png)
 
 ### 创建虚拟环境
 
@@ -38,12 +47,12 @@ https://blog.csdn.net/fan18317517352/article/details/123035625
 
 2. #### 创建新的虚拟环境:
    
-   使用以下命令创建一个新的虚拟环境，其中 `deeplearning` 是你为虚拟环境选择的名称，`python=3.9` 指定了 Python 的版本。
+   使用以下命令创建一个新的虚拟环境，其中 `YourEnvName` 是你为虚拟环境选择的名称，`python=3.9` 指定了 Python 的版本。
    
    由于Pytorch只支持3.8-3.11的Python版本，请创建虚拟环境时的Python版本号。
    
    ```bash
-   conda create -n YourEnvName python=3.9
+   conda create -n YourEnvName python=3.9 -y
    
 3. #### 进入新创建的虚拟环境：
    ```bash
@@ -54,21 +63,26 @@ https://blog.csdn.net/fan18317517352/article/details/123035625
    conda deactivate
 
 ### 在Pycharm中使用Anaconda
-1. 点击左上角File，点击Open，打开一个你的工作目录
-2. 点击File，点击Settings
-    ![img.png](img/Envrionment_setup_img/4.png)
-3. 在project里找到Python Interpreter,点击Add interpreter
-    ![img_1.png](img/Envrionment_setup_img/5.png)
-4. 选择Conda Environment，点击文件夹图标浏览目录
-    ![img_3.png](img/Envrionment_setup_img/8.png)
-5. 选择Conda Executable
-    ![img_4.png](img/Envrionment_setup_img/9.png)
-6. 选择刚刚创建的虚拟环境deepLearning
-![img_5.png](img/Envrionment_setup_img/10.png)
+1. 点击左上角"File"，点击"Open"，打开一个你的工作目录  
+如果是初次使用：点击"Open"，打开一个你的工作目录   
+![img.png](img/Envrionment_setup_img/11.png)
+
+2. 点击"File"，点击"Settings"
+
+    ![img.png](img/Envrionment_setup_img/4.png)  
+
+3. 在"Project"里找到"Python Interpreter",点击"Add interpreter"  
+    ![img_1.png](img/Envrionment_setup_img/5.png)  
+4. 选择Conda Environment，点击文件夹图标浏览目录，找到自己Anaconda的安装目录  
+    ![img_2.png](img/Envrionment_setup_img/13.png)  
+5. 选择Conda Executable， 点击右边的“Load Environments”
+    ![img_4.png](img/Envrionment_setup_img/9.png)  
+6. 选择刚刚创建的虚拟环境"deepLearning"  
+![img_5.png](img/Envrionment_setup_img/10.png)  
 
 或者，你也可以通过以下操作添加interpreter：
 
-![img_6.png](img/Envrionment_setup_img/11.png)
+![img_6.png](img/Envrionment_setup_img/15.png)
 
 ## 安装深度学习框架和其他库
 
@@ -88,7 +102,7 @@ conda info -e
 
 如果在你想激活的环境前有一个“*”，说明已经成功切换
 
-![img7.png](C:\Users\86139\SSTIA\DeepLearning-wksp-div.1\img\Envrionment_setup_img\12.png)
+![img7.png](img/Envrionment_setup_img/16.png)
 
 ### 2. 安装依赖项
 
@@ -156,8 +170,14 @@ pip3 install torch torchvision torchaudio --index-url https://download.pytorch.o
 conda install pytorch torchvision torchaudio cpuonly -c pytorch
 ```
 
+# 2. Vscode+Anaconda+Pytorch
+1. 根据PyCharm+Anaconda+Pytorch中的“安装Anaconda”步骤进行操作，配置Anaconda并创建虚拟环境
+2. 在Vscode中打开一个目录，创建test.py文件，点击右下角的“选择解释器”
+![img.png](img/Envrionment_setup_img/Vscode.png)  
+然后选择刚刚创建的conda虚拟环境的名字即可
+2. 根据PyCharm+Anaconda+Pytorch中的“安装深度学习框架和其他库”步骤进行配置
 
-
+   
 ## 参考资料
 
 pycharm安装：https://blog.csdn.net/qq_32892383/article/details/116137730  
