@@ -3,8 +3,9 @@
 ## markdown Guide
 
 Environment_setup.md: 环境配置指南
-Workshop Notes/Part 1.md: 神经网络导论
-Workshop Notes/Part 2.md: 感知器工作原理&训练神经网络
+Workshop Files/Part 1.md: 神经网络导论
+Workshop Files/Part 2.md: 感知器工作原理&训练神经网络
+Workshop Files/Part 3: MNIST演示
 
 ###### 一些小提示
 
