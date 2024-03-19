@@ -66,6 +66,31 @@ https://blog.csdn.net/fan18317517352/article/details/123035625
 4. ##### 退出该虚拟环境：
    ```bash
    conda deactivate
+   ```
+   
+5. ##### activate失败（感谢jcgg的贡献qwq）：
+
+   在win11中，很有可能出现activate失败的情况。你可以通过一下两种方式排查。
+
+   1. 首先确定conda已经添加到环境变量。
+
+      对于Windows用户，根据采用的中终端，执行`conda init powershell`或`conda init cmd.exe`命令
+
+      如果出现不能运行的脚本的问题，在管理员模式下打开 PowerShell，并输入以下命令来修改执行策略为 "RemoteSigned"（仅允许运行本地脚本）：`Set-ExecutionPolicy RemoteSigned`
+
+      对于macos和linux用户，可以直接`conda init`
+
+      最后，重新启动shell即可
+
+   2. 如果这种方式失效，可以考虑手动添加虚拟环境到环境变量中
+
+      首先找到你的anaconda的安装地址，打开其中的**envs**文件夹，能找到你创建的环境的文件夹。
+
+      将需要activate的环境文件夹以及其内部的Scripts文件夹添加到环境变量中即可。
+
+      ![Issue1](\img\Envrionment_setup_img\Issue_1.png)
+
+      
 
 ### 在Pycharm中使用Anaconda
 1. 点击左上角"File"，点击"Open"，打开一个你的工作目录  
