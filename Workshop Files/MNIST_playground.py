@@ -30,10 +30,12 @@ class MNISTNN(nn.Module):
 
 
 model = MNISTNN()
+# code
 
 # Training Loop
 for epoch in range(5):
     for i, data in enumerate(trainloader, 0):
+        inputs, labels = data
         # code
         if i % 500 == 0:
             print(
