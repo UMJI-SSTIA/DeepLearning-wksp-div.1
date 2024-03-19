@@ -28,11 +28,17 @@ class MNISTNN(nn.Module):
         # code
         return x
 
+
 model = MNISTNN()
 
 # Training Loop
 for epoch in range(5):
-    # code
+    for i, data in enumerate(trainloader, 0):
+        # code
+        if i % 500 == 0:
+            print(
+                f"Epoch [{epoch + 1}/5], Step [{i + 1}/{len(trainloader)}], Loss: {loss.item()}"
+            )
 
 # Test
 correct = 0
