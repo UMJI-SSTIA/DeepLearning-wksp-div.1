@@ -1,6 +1,10 @@
 # DeepLearning-wksp-div.1
 
-**During development procedure, please do changes in your own branches and then merge to the master branch.**
+## markdown Guide
+
+Environment_setup.md: 环境配置指南
+Workshop Notes/Part 1.md: 神经网络导论
+Workshop Notes/Part 2.md: 感知器工作原理&训练神经网络
 
 ###### 一些小提示
 
