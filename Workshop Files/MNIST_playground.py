@@ -21,11 +21,14 @@ testloader = torch.utils.data.DataLoader(testset, batch_size=32, shuffle=False)
 
 class MNISTNN(nn.Module):
     def __init__(self):
+        super(MNISTNN, self).__init__()
         # code
 
     def forward(self, x):
         # code
+        return x
 
+model = MNISTNN()
 
 # Training Loop
 for epoch in range(5):
