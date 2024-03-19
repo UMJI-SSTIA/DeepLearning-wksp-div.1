@@ -10,6 +10,8 @@
 
 若有不足之处，还请多多指教。
 
+特别鸣谢：科协全体成员，jcgg，班雨桐老师
+
 ## markdown Guide
 
 Environment_setup.md: 环境配置指南
