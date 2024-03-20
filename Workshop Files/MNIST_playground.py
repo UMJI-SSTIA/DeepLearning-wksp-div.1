@@ -20,6 +20,16 @@ testset = torchvision.datasets.MNIST(
 testloader = torch.utils.data.DataLoader(testset, batch_size=32, shuffle=False)
 
 
+# useful methods:
+# F.relu(x) or torch.relu(x)-> ReLU
+# F.linear(a,b) or nn.Linear(a,b) -> Fully connected layer (a->input, b->output)
+# F.max_pool2d(x,(a,b)) or nn.MaxPool2d(x,(a,b)) -> Max pooling layer, (a,b)->kernel size
+# F.conv2d(a,b,k) or nn.Conv2d(a,b,k) -> Convolutional layer (a->input channels, b->output channels, k->kernel size)
+# x.view(-1, size) -> Reshape the tensor to (auto, size)
+# nn.CrossEntropyLoss() -> Cross Entropy Loss
+# optim.SGD(model.parameters(), lr=a) -> Stochastic Gradient Descent optimizer, lr->learning rate
+
+
 # Note: the size of one MNIST pic is 28*28
 
 
