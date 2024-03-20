@@ -19,6 +19,9 @@ testset = torchvision.datasets.MNIST(
 testloader = torch.utils.data.DataLoader(testset, batch_size=32, shuffle=False)
 
 
+# Note: the size of one MNIST pic is 28*28
+
+
 class MNISTNN(nn.Module):
     def __init__(self):
         super(MNISTNN, self).__init__()
