@@ -1,4 +1,5 @@
 # Reference: JI DeepLearning Tutorial
+# Suggestion: Don't look at it when practicing. Try to write it on your own.
 import torch
 import torch.nn as nn
 import torch.optim as optim
